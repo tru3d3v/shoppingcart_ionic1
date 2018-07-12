@@ -1,0 +1,108 @@
+<ion-view view-title="RedMart">
+    <ion-content>
+        
+                <ion-list>
+                    
+                    <ion-item class="row item-text-wrap row-center space" ng-repeat="item in redmartproducts" nav-clear menu-close  ng-click="blinds();">
+                       
+                            <div   ng-repeat="sub in item.datas" class="col-33 col-center">
+                                
+                                        <div  ui-sref="app.detail({id:sub.id})"  class="ink boxw">
+                                            <div class="thumbnail">
+                                                    <img ng-src="{{sub.thumbnail}}" class="portrait"/>
+                                            </div>
+
+                                            <h2 class="product-name item-text-wrap">{{sub.title}}</h2>
+                                            <h2 class="product-weight">{{sub.weight}}</h2>
+                                            <h2 class="product-price">${{sub.price}}</h2>
+                                        </div>
+                                        <button class="button button-raised assertive-900 ink-dark customBtn">ADD TO CART</button>
+
+                            </div>
+                    </ion-item>
+                   
+                </ion-list> 
+
+   <ion-infinite-scroll
+    on-infinite="loadMore()"
+    distance="5px">
+  </ion-infinite-scroll>
+
+
+          <!-- <div class="row">
+                    <div class="col-33 col-center">
+
+                                    
+                                    <div ui-sref="app.profile"  class="ink center">
+                                        <img class="full-image"  src="http://media.redmart.com/newmedia/200p/i/m/8885003328014_0005_1520495600715.jpg">
+                                        <h2 class="product-name">Hmm. Hope nobody destroys this!</h2>
+                                        <h2 class="product-weight">100 kg</h2>
+                                        <h2 class="product-price">100 $</h2>
+                                    </div>
+                                    <button class="button button-raised assertive-900 ink-dark customBtn">ADD TO CART</button>
+                    </div>
+
+                    <div class="col-33 col-center">
+                                    <div ui-sref="app.profile"  class="ink">
+                                        <img class="full-image" src="http://media.redmart.com/newmedia/200p/i/m/8885003328014_0005_1520495600715.jpg">
+                                        <h2 class="product-name">Hmm. Hope nobody destroys this!</h2>
+                                        <h2 class="product-weight">100 kg</h2>
+                                        <h2 class="product-price">100 $</h2>
+                                    </div>
+                                    <button class="button button-raised assertive-900 ink-dark customBtn">ADD TO CART</button>
+                                    
+                    </div>
+
+                    <div class="col-33 col-center">
+                                    <div ui-sref="app.profile"  class="ink">
+                                        <img class="full-image" src="http://media.redmart.com/newmedia/200p/i/m/8885003328014_0005_1520495600715.jpg">
+                                        <h2 class="product-name">Hmm. Hope nobody destroys this!</h2>
+                                        <h2 class="product-weight">100 kg</h2>
+                                        <h2 class="product-price">100 $</h2>
+                                    </div>
+                                    <button class="button button-raised assertive-900 ink-dark customBtn">ADD TO CART</button>
+                                    
+                    </div>
+            </div> -->
+          
+
+        <!--
+
+        <div class="list half">
+            <div class="card card-gallery item item-text-wrap">
+                <div ui-sref="app.profile"  class="ink">
+                    <img class="full-image" src="http://media.redmart.com/newmedia/200p/i/m/8885003328014_0005_1520495600715.jpg">
+                    <h2 class="product-name">Hmm. Hope nobody destroys this!</h2>
+                    <h2 class="product-weight">100 kg</h2>
+                    <h2 class="product-price">100 $</h2>
+                </div>
+                <button class="button button-raised assertive-900 ink-dark">ADD TO CART</button>
+                
+            </div>
+
+            <div class="card card-gallery item item-text-wrap">
+                <div ui-sref="app.profile"  class="ink">
+                    <img class="full-image" src="http://media.redmart.com/newmedia/200p/i/m/8885003328014_0005_1520495600715.jpg">
+                    <h2 class="product-name">Hmm. Hope nobody destroys this!</h2>
+                    <h2 class="product-weight">100 kg</h2>
+                    <h2 class="product-price">100 $</h2>
+                </div>
+                <button class="button button-raised assertive-900 ink-dark">ADD TO CART</button>
+                
+            </div>
+
+            <div class="card card-gallery item item-text-wrap">
+                <div ui-sref="app.profile"  class="ink">
+                    <img class="full-image" src="http://media.redmart.com/newmedia/200p/i/m/8885003328014_0005_1520495600715.jpg">
+                    <h2 class="product-name">Hmm. Hope nobody destroys this!</h2>
+                    <h2 class="product-weight">100 kg</h2>
+                    <h2 class="product-price">100 $</h2>
+                </div>
+                <button class="button button-raised assertive-900 ink-dark">ADD TO CART</button>
+                
+            </div>
+        </div>-->
+        
+
+    </ion-content>
+</ion-view>
