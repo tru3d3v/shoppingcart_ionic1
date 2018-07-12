@@ -30,6 +30,8 @@ angular.module('starter.controllers', [])
 
     $scope.showNavBar = function() {
         document.getElementsByTagName('ion-nav-bar')[0].style.display = 'block';
+        console.log( document.getElementsByTagName('ion-nav-bar')[0].style.display);
+
     };
 
     $scope.noHeader = function() {
@@ -67,6 +69,7 @@ angular.module('starter.controllers', [])
         for (var i = 0; i < content.length; i++) {
             if (!content[i].classList.contains('has-header')) {
                 content[i].classList.toggle('has-header');
+                console.log('asda');
             }
         }
 
@@ -92,7 +95,12 @@ angular.module('starter.controllers', [])
 })
 .controller('ProductsCtrl', function($scope,$http, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion,myservice) {
    
-   
+    $scope.$parent.clearFabs();
+    $timeout(function() {
+        $scope.$parent.showHeader();
+    }, 0);
+
+
     $scope.pageIndex=0;
     $scope.redmartproducts = [];
     $scope.pageSize = 15;
@@ -155,13 +163,25 @@ angular.module('starter.controllers', [])
 
 
 })
-.controller('DetailCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk,$state,$http,myservice) {
+.controller('DetailCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk,$state,$http,myservice,$ionicHistory) {
     
+
+     // Set Header
+     $scope.$parent.showHeader();
+     $scope.$parent.clearFabs();
+     $scope.isExpanded = false;
+     $scope.$parent.setExpanded(true);
+     $scope.$parent.setHeaderFab('right');
+
     $timeout(function() {
         ionicMaterialMotion.fadeSlideInRight({
             startVelocity: 3000
         });
     }, 700);
+
+    $scope.go_back = function(){
+        $state.go('app.products');
+    }
 
     // Set Ink
     ionicMaterialInk.displayEffect();

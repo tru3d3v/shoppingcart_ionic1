@@ -34,6 +34,7 @@ app.run(function($ionicPlatform) {
   $ionicConfigProvider.backButton.previousTitleText(false);
   */
 
+
   $stateProvider.state('app', {
       url: '/app',
       abstract: true,
